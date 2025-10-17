@@ -3,17 +3,17 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 from langchain_openai import OpenAIEmbeddings
-from langchain.vectorstores import FAISS
-
+from langchain_community.vectorstores import FAISS 
 from langchain.chains import ConversationalRetrievalChain
 
 
+key = "sk-3Y2fAEoDopIzz19EC0zGehuwEUNtvmlRS4k9Hv7vGhwB993N"
 url = "https://api.aigc369.com/v1"
 
-import os
-# 设置代理（替换为你的实际代理地址和端口）
-os.environ["HTTP_PROXY"] = "http://127.0.0.1:7897"  # 示例代理地址
-os.environ["HTTPS_PROXY"] = "http://127.0.0.1:7897"  # 示例代理地址
+# import os
+# # 设置代理（替换为你的实际代理地址和端口）
+# os.environ["HTTP_PROXY"] = "http://127.0.0.1:7897"  # 示例代理地址
+# os.environ["HTTPS_PROXY"] = "http://127.0.0.1:7897"  # 示例代理地址
 
 def qa_agent(api_key,memory,uploaded_file,question):
     model = ChatOpenAI(model="gpt-3.5-turbo",api_key=api_key,base_url=url)
