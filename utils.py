@@ -7,7 +7,6 @@ from langchain_community.vectorstores import FAISS
 from langchain.chains import ConversationalRetrievalChain
 
 
-key = "sk-3Y2fAEoDopIzz19EC0zGehuwEUNtvmlRS4k9Hv7vGhwB993N"
 url = "https://api.aigc369.com/v1"
 
 # import os
@@ -46,6 +45,7 @@ def qa_agent(api_key,memory,uploaded_file,question):
     
     response = qa.invoke({"chat_history":memory,"question": question})
     return response
+
 
 
 
